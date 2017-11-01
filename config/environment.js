@@ -51,7 +51,6 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.rootURL = '/ember-auth-grunt-deploy'
     ENV.locationType = 'hash'
-    ENV.apiHost = 'https://ghastly-skeleton-14353.herokuapp.com/'
   }
 
   return ENV
