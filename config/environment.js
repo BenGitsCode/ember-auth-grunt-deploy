@@ -1,9 +1,9 @@
 /* jshint node: true */
 
-module.exports = function (environment) {
-  'use strict';
+module.exports = function(environment) {
+  'use strict'
   const ENV = {
-    modulePrefix: 'ga-wdi-boston.ember-auth',
+    modulePrefix: 'ember-auth-grunt-deploy',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
@@ -22,7 +22,7 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-  };
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -30,27 +30,29 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    let port = +('GA'.split('').reduce((p, c) =>
-      p + c.charCodeAt().toString(16), '')
-    );
-    ENV.apiHost = `http://localhost:${port}`;
+    let port = +'GA'
+      .split('')
+      .reduce((p, c) => p + c.charCodeAt().toString(16), '')
+    ENV.apiHost = `http://localhost:${port}`
   }
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.rootUrl = '/';
-    ENV.locationType = 'none';
+    ENV.rootUrl = '/'
+    ENV.locationType = 'none'
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+    ENV.APP.LOG_ACTIVE_GENERATION = false
+    ENV.APP.LOG_VIEW_LOOKUPS = false
 
-    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.rootElement = '#ember-testing'
   }
 
   if (environment === 'production') {
-    ENV.locationType = 'hash';
+    ENV.rootURL = '/ember-auth-grunt-deploy'
+    ENV.locationType = 'hash'
+    ENV.apiHost = 'https://ghastly-skeleton-14353.herokuapp.com/'
   }
 
-  return ENV;
-};
+  return ENV
+}
